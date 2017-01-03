@@ -1,0 +1,43 @@
+# group
+awesome_people:
+  name: Awesome People
+  view: no
+  entities:
+    - device_tracker.rahul_ph
+    - device_tracker.divya_ph
+
+environ:
+  name: Climate
+  entities: 
+    - sensor.yr_symbol
+    - sun.sun
+
+lights_all:
+  name: Lights
+  entities:
+    - light.hall_light
+    - light.bedroom_light
+    - switch.corner_light
+
+media_all:
+  name: Media
+  view: no
+  entities:
+    - media_player.living_room_home
+    - media_player.pastarun
+    - media_player._un65ju6700_un65ju6700
+
+nest:
+  name: NEST 
+  entities:
+    - binary_sensor.living_room_thermostat_butterfly_fan
+    - binary_sensor.living_room_thermostat_butterfly_has_leaf
+    - binary_sensor.living_room_thermostat_butterfly_is_locked
+    - binary_sensor.living_room_thermostat_butterfly_is_using_emergency_heat
+    - binary_sensor.living_room_thermostat_butterfly_online
+    - sensor.living_room_thermostat_butterfly_humidity
+    - sensor.living_room_thermostat_butterfly_hvac_state
+    - sensor.living_room_thermostat_butterfly_operation_mode
+    - sensor.living_room_thermostat_butterfly_target
+    - sensor.living_room_thermostat_butterfly_temperature
+    - climate.living_room_butterfly
