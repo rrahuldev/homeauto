@@ -1,29 +1,13 @@
-#scripts
-safe_mode:
-  alias: safe mode for out
-  sequence:
-    - alias: Turn off sofa light
-      service: switch.turn_off
-      data:
-        entity_id: switch.corner_light
-    - alias: Turn off bedroom light
-      service: light.turn_off
-      data:
-        entity_id: light.bedroom_light        
-    - delay:
-        # supports seconds, milliseconds, minutes, hours
-        minutes: 1
-    - alias: Nest to away
-      service: climate.set_away_mode
-      data:
-        entity_id: climate.living_room_butterfly
-        away_mode: true
-    - condition: sun 
-      after: sunset 
-      # Optional offset value 
-      after_offset: "-1:00:00"
-    - alias: Turn on window light
-      service: light.turn_on
-      data:
-        entity_id: light.hall_light
-        brightness: 40
+- alias: "House Were home"
+  trigger:
+    - platform: state
+      entity_id: climate.living_room_butterfly.attributes["away_mode"]
+      from: 'on'
+      to: 'off'
+  condition:
+    - condition: state
+      entity_id: sun.sun
+      state: 'below_horizon'
+  action:
+    service: switch.turn_on
+    entity_id: switch.corner_light

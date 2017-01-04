@@ -10,6 +10,11 @@ safe_mode:
       service: light.turn_off
       data:
         entity_id: light.bedroom_light        
+    - alias: Turn on window light
+      service: light.turn_on
+      data:
+        entity_id: light.hall_light
+        brightness: 120
     - delay:
         # supports seconds, milliseconds, minutes, hours
         minutes: 1
@@ -19,11 +24,33 @@ safe_mode:
         entity_id: climate.living_room_butterfly
         away_mode: true
     - condition: sun 
-      after: sunset 
+      before: sunset 
       # Optional offset value 
-      after_offset: "-1:00:00"
-    - alias: Turn on window light
-      service: light.turn_on
+      before_offset: "1:00:00"
+    - alias: Turn off window light
+      service: light.turn_off
       data:
         entity_id: light.hall_light
-        brightness: 40
+    - service: notify.rdpi
+      data:
+        message: Safe-mode complete
+        
+               
+night_mode:
+  alias: Night mode
+  sequence:
+    - alias: Turn off sofa light
+      service: switch.turn_off
+      data:
+        entity_id: switch.corner_light
+    - alias: Turn on bedroom light
+      service: light.turn_on
+      data:
+        entity_id: light.bedroom_light      
+    - alias: Turn off window light
+      service: light.turn_off
+      data:
+        entity_id: light.hall_light
+    - service: notify.rdpi
+      data:
+        message: 
