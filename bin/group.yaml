@@ -28,7 +28,7 @@ media_all:
     - media_player._un65ju6700_un65ju6700
 
 nest:
-  name: NEST 
+  name: Nest
   entities:
     - binary_sensor.living_room_thermostat_butterfly_fan
     - binary_sensor.living_room_thermostat_butterfly_has_leaf
@@ -40,4 +40,5 @@ nest:
     - sensor.living_room_thermostat_butterfly_operation_mode
     - sensor.living_room_thermostat_butterfly_target
     - sensor.living_room_thermostat_butterfly_temperature
+    - sensor.nest_away_mode
     - climate.living_room_butterfly

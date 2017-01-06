@@ -51,6 +51,11 @@ night_mode:
       service: light.turn_off
       data:
         entity_id: light.hall_light
+    - alias: Set nest to night temperature 71
+      service: climate.set_temperature
+      data:
+        entity_id: climate.living_room_butterfly
+        temperature: 71
     - service: notify.rdpi
       data:
-        message: 
+        message: Night-mode complete

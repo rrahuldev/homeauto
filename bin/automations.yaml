@@ -1,13 +1,15 @@
-- alias: "House Were home"
+- alias: "House are home"
   trigger:
     - platform: state
-      entity_id: climate.living_room_butterfly.attributes["away_mode"]
-      from: 'on'
-      to: 'off'
+      entity_id: sensor.nest_away_mode
+      state: 'False'
   condition:
     - condition: state
       entity_id: sun.sun
       state: 'below_horizon'
   action:
-    service: switch.turn_on
-    entity_id: switch.corner_light
+    - service: switch.turn_on
+      entity_id: switch.corner_light
+    - service: notify.rdpi
+      data:
+        message: 'Home enter automation complete'
