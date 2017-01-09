@@ -54,7 +54,7 @@ device_tracker:
 
 notify:
   platform: pushbullet
-  name: rdpi
+  name: !secret pushname
   api_key: !secret pushbullet
 
 ## include files
