@@ -40,6 +40,18 @@ sensor.since_last_boot:
 
 sensor.badlogin:
   hidden: true
+
+sensor.disk_use_percent:
+  friendly_name: 'Disk Used'
+  icon: mdi:album
+  
+sensor.memory_use_percent:
+  friendly_name: 'Memory Used'
+  icon: mdi:memory
+
+sensor.processor_use:
+  friendly_name: 'Processor Used'
+  icon: mdi:layers
   
 ###################################
 ##  TV/Media
