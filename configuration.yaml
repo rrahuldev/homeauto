@@ -1,12 +1,11 @@
 homeassistant:
-  # Name of the location where Home Assistant is running
   name: Home
-  # Location required to calculate the time the sun rises and sets
   latitude: !secret latitude
   longitude: !secret longitude
   elevation: !secret elevation
   unit_system: imperial
   time_zone: America/Chicago
+  customize: !include bin/customize.yaml
   
 # introduction:
 frontend:
@@ -22,7 +21,6 @@ history:
 logbook:
 sun:
 
-# Text to speech
 tts:
   platform: google
   cache: false
@@ -35,8 +33,6 @@ mqtt:
   password: !secret mqtt_pwd
 
 ## Start of devices
-
-# LIFX
 light:
   platform: lifx
   broadcast: 192.168.1.255
