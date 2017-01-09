@@ -62,3 +62,37 @@ media_player.pastarun:
 
 media_player._un65ju6700_un65ju6700:
   hidden: true
+
+###################################
+##  Nest Sensors
+###################################
+binary_sensor.living_room_thermostat_butterfly_fan:
+  friendly_name: 'HVAC Fan'
+
+binary_sensor.living_room_thermostat_butterfly_has_leaf:
+  friendly_name: 'Eco Temperature'
+
+binary_sensor.living_room_thermostat_butterfly_is_locked:
+  friendly_name: 'Locked'
+
+binary_sensor.living_room_thermostat_butterfly_is_using_emergency_heat:
+  friendly_name: 'Emergency Heat'
+  hidden: true
+  
+binary_sensor.living_room_thermostat_butterfly_online:
+  friendly_name: 'Nest Online'
+
+sensor.living_room_thermostat_butterfly_humidity:
+  friendly_name: 'Humidity'
+  
+sensor.living_room_thermostat_butterfly_hvac_state:
+  friendly_name: 'HVAC State'
+  
+sensor.living_room_thermostat_butterfly_operation_mode:
+  friendly_name: 'Op Mode'
+  
+sensor.living_room_thermostat_butterfly_target:
+  friendly_name: 'Temperature Target'
+  
+sensor.living_room_thermostat_butterfly_temperature:
+  friendly_name: 'Temperature'
