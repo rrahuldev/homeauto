@@ -17,7 +17,7 @@ light.hall_light:
 
 light.bedroom_light:
   friendly_name: 'Bedroom Light'
-  icon: mdi:lightbulb-on-outline
+  icon: mdi:lightbulb-outline
   # emulated_hue: true
 
 ###################################
@@ -27,7 +27,6 @@ group.all_automations:
   friendly_name: 'All Automations'
   hidden: True
   # emulated_hue: False
-
 
 ###################################
 ##  Homeassistant Section
@@ -41,3 +40,20 @@ sensor.since_last_boot:
 
 sensor.badlogin:
   hidden: true
+  
+###################################
+##  TV/Media
+###################################
+device_tracker.samsung_tv:
+  hidden: true
+sensor.samsung_tv:
+  icon: mdi:television-guide
+  
+device_tracker.chromecast:
+  hidden: true
+sensor.chromecast:
+  icon: mdi:music-circle
+
+media_player.living_room_home:
+  friendly_name: 'Google Home'
+
