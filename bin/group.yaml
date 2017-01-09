@@ -30,7 +30,10 @@ system_settings:
   name: System
   view: no
   entities:
-    - sensor.since_last_boot_templated:
+    - sensor.since_last_boot_templated
+    - sensor.disk_use_percent
+    - sensor.memory_use_percent
+    - sensor.processor_use
 
 nest:
   name: Nest
