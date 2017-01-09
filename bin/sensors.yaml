@@ -33,7 +33,7 @@
   resources:
     - type: since_last_boot
     - type: disk_use_percent
-      arg:/home
+      arg: /home
     - type: memory_use_percent
     - type: processor_use
     
