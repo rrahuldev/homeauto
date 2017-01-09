@@ -11,7 +11,7 @@
      samsung_tv:
        friendly_name: 'Samsung TV'
        value_template: "{{ 'On' if is_state('device_tracker.samsung_tv','home') else 'Off' }}""
-    
+     
      chromecast:
        friendly_name: 'ChromeCast Audio 1'
        value_template: "{{ 'Online' if is_state('device_tracker.chromecast', 'home') else 'Offline' }}"
