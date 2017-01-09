@@ -1,3 +1,5 @@
+# Turn on corner light when nest switches from away to home mode
+# only when sun is down
 - alias: We are home
   trigger:
     - platform: state
@@ -11,7 +13,8 @@
     - service: switch.turn_on
       entity_id: switch.corner_light
 
-- alias: Turn off firelight with cornerlight
+# Turn off firelight when corner light is turned on after 1min
+- alias: Turn off firelight
   trigger: 
     - platform: state
       entity_id: switch.corner_light
@@ -25,6 +28,7 @@
     - service: light.turn_off
       entity_id: light.hall_light
 
+# Send a push notification when login failure is logged
 - alias: Login Failure
   hide_entity: True
   trigger:
