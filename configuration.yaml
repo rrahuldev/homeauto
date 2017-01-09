@@ -57,6 +57,12 @@ notify:
   name: !secret pushname
   api_key: !secret pushbullet
 
+emulated_hue:
+  host_ip: !secret hostipaddress
+  type: google_home
+  listen_port: 80
+  expose_by_default: false
+
 ## include files
 group: !include bin/group.yaml
 script: !include bin/scripts.yaml
