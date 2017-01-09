@@ -13,7 +13,7 @@ frontend:
 http:
   api_password: !secret api_password
   # Uncomment this if you are using SSL or running in Docker etc
-  base_url: !secret base_url
+  # base_url: !secret base_url
 
 updater:
 discovery:
@@ -31,8 +31,8 @@ mqtt:
   broker: 127.0.0.1
   port: 1883
   client_id: home-assistant-1
-  username: pi
-  password: raspberry
+  username: !secret mqtt_uid
+  password: !secret mqtt_pwd
 
 ## Start of devices
 
@@ -48,6 +48,9 @@ nest:
   client_id: !secret nest_id
   client_secret: !secret nest_key
 
+climate:
+  platform: nest
+
 device_tracker:
   - platform: nmap_tracker
     hosts: 192.168.1.100-150
@@ -55,15 +58,11 @@ device_tracker:
 
 notify:
   platform: pushbullet
-  name: RDPI
+  name: rdpi
   api_key: !secret pushbullet
 
-panel_iframe:
-  router:
-    title: 'Router'
-    icon: 'mdi:router-wireless'
-    url: 'http://192.168.1.1'
 ## include files
 group: !include bin/group.yaml
 script: !include bin/scripts.yaml
 sensor: !include bin/sensors.yaml
+automation: !include bin/automations.yaml

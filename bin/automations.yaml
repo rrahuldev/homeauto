@@ -1,4 +1,4 @@
-- alias: "House are home"
+- alias: We are home
   trigger:
     - platform: state
       entity_id: sensor.nest_away_mode
@@ -10,6 +10,28 @@
   action:
     - service: switch.turn_on
       entity_id: switch.corner_light
-    - service: notify.rdpi
-      data:
-        message: 'Home enter automation complete'
+
+- alias: Turn off firelight with cornerlight
+  trigger: 
+    - platform: state
+      entity_id: switch.corner_light
+      state: 'on'
+      for: '00:01:00'
+  condition:
+    - condition: state
+      entity_id: light.hall_light
+      state: 'on'
+  action:
+    - service: light.turn_off
+      entity_id: light.hall_light
+
+- alias: Login Failure
+  hide_entity: True
+  trigger:
+    platform: template
+    value_template: "{{ states('persistent_notification.httplogin') != 'unknown' }}"
+  action:
+    service: notify.rdpi
+    data:
+      title: 'Bad Login'
+      message: There was a Hack attempt! Go Check Hass GUI for details.

@@ -34,8 +34,7 @@ safe_mode:
     - service: notify.rdpi
       data:
         message: Safe-mode complete
-        
-               
+
 night_mode:
   alias: Night mode
   sequence:
