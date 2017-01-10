@@ -36,7 +36,11 @@
       arg: /home
     - type: memory_use_percent
     - type: processor_use
-    
+
+- platform: command_line
+  command: "cat /var/log/auth.log | grep 'BREAK-IN ATTEMPT' | tail -1"
+  name: 'BREAK-IN'
+  
 - platform: template
   sensors:
     since_last_boot_templated:
@@ -69,14 +73,3 @@
             {{ minutes }} minutes
           {%- endif -%}
         {%- endif -%}
-        {%- if seconds > 0 -%}
-          {%- if hours > 0 or minutes > 0 -%}
-            {{ ', ' }}
-          {%- endif -%}
-          {%- if seconds == 1 -%}
-            1 second
-          {%- else -%}
-            {{ seconds }} seconds
-          {%- endif -%}
-        {%- endif -%}
-...
