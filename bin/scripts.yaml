@@ -1,6 +1,6 @@
 #scripts
 safe_mode:
-  alias: safe mode for out
+  alias: Safe mode
   sequence:
     - alias: Turn off sofa light
       service: switch.turn_off
@@ -23,6 +23,9 @@ safe_mode:
       data:
         entity_id: climate.living_room_butterfly
         away_mode: true
+    - service: notify.rdpi
+      data:
+        message: Safe-mode complete
     - condition: sun 
       before: sunset 
       # Optional offset value 
@@ -31,9 +34,6 @@ safe_mode:
       service: light.turn_off
       data:
         entity_id: light.hall_light
-    - service: notify.rdpi
-      data:
-        message: Safe-mode complete
 
 night_mode:
   alias: Night mode

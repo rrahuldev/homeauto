@@ -1,5 +1,8 @@
-# Turn on corner light when nest switches from away to home mode
-# only when sun is down
+# Automations
+
+###############
+# Turn on corner light when nest switches from 
+# away to home mode only when sun is down
 - alias: We are home
   trigger:
     - platform: state
@@ -13,6 +16,7 @@
     - service: switch.turn_on
       entity_id: switch.corner_light
 
+###############
 # Turn off firelight when corner light is turned on after 1min
 - alias: Turn off firelight
   trigger: 
@@ -28,9 +32,10 @@
     - service: light.turn_off
       entity_id: light.hall_light
 
+###############
 # Send a push notification when login failure is logged
 - alias: Login Failure
-  hide_entity: True
+  hide_entity: true
   trigger:
     platform: template
     value_template: "{{ states('persistent_notification.httplogin') != 'unknown' }}"
@@ -39,3 +44,20 @@
     data:
       title: 'Bad Login'
       message: There was a Hack attempt! Go Check Hass GUI for details.
+
+###############
+# Notify when fan is on under away settings
+- alias: Away Fan On
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.living_room_thermostat_butterfly_fan
+      state: 'on'
+  condition:
+    - condition: state
+      entity_id: sensor.nest_away_mode
+      state: 'True'
+  action:
+    - service: notify.rdpi
+      data:
+        title: 'Nest Mode'
+        message: 'Fan ON under away mode'
