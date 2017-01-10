@@ -37,10 +37,6 @@
     - type: memory_use_percent
     - type: processor_use
 
-- platform: command_line
-  command: "cat /var/log/auth.log | grep 'BREAK-IN ATTEMPT' | tail -1"
-  name: 'BREAK-IN'
-  
 - platform: template
   sensors:
     since_last_boot_templated:

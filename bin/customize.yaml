@@ -3,7 +3,7 @@
 ###################################
 switch.corner_light: 
   friendly_name: 'Corner Light'
-  icon: mdi:lightbulb_outline
+  icon: mdi:lightbulb-outline
   # emulated_hue: true
 
 ###################################
