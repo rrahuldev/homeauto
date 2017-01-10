@@ -3,7 +3,7 @@
 ###################################
 switch.corner_light: 
   friendly_name: 'Corner Light'
-  icon: mdi:lightbulb-outline
+  icon: mdi:lightbulb_outline
   # emulated_hue: true
 
 ###################################
@@ -26,6 +26,9 @@ group.all_automations:
   friendly_name: 'All Automations'
   hidden: true
   # emulated_hue: False
+  
+automation.away_fan_on:
+  icon: mdi:fan
 
 ###################################
 ##  Homeassistant Section
@@ -79,7 +82,8 @@ media_player._un65ju6700_un65ju6700:
 ###################################
 binary_sensor.living_room_thermostat_butterfly_fan:
   friendly_name: 'Fan'
-
+  icon: mdi:fan
+  
 binary_sensor.living_room_thermostat_butterfly_has_leaf:
   friendly_name: 'Eco Temperature'
   hidden: true
@@ -111,3 +115,4 @@ sensor.living_room_thermostat_butterfly_target:
   
 sensor.living_room_thermostat_butterfly_temperature:
   friendly_name: 'Temperature'
+
