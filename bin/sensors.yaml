@@ -54,9 +54,9 @@
         {%- endif -%}
         {%- if hours > 0 -%}
           {%- if hours == 1 -%}
-            1 hour
+            1 hr
           {%- else -%}
-            {{ hours }} hours
+            {{ hours }} hr
           {%- endif -%}
         {%- endif -%}
         {%- if minutes > 0 -%}
@@ -64,8 +64,8 @@
             {{ ', ' }}
           {%- endif -%}
           {%- if minutes == 1 -%}
-            1 minute
+            1 min
           {%- else -%}
-            {{ minutes }} minutes
+            {{ minutes }} min
           {%- endif -%}
         {%- endif -%}

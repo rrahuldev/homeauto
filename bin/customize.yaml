@@ -3,7 +3,9 @@
 ###################################
 switch.corner_light: 
   friendly_name: 'Corner Light'
-  icon: mdi:lightbulb-outline
+  icon: 
+    state_off: mdi:lightbulb-outline
+    state_on: mdi:light-on-outline
   # emulated_hue: true
 
 ###################################
@@ -22,13 +24,15 @@ light.bedroom_light:
 ###################################
 ##  Groups
 ###################################
-group.all_automations:
-  friendly_name: 'All Automations'
-  hidden: true
-  # emulated_hue: False
-  
+
 automation.away_fan_on:
   icon: mdi:fan
+
+automation.turn_off_firelight:
+  icon: mdi:fire
+
+automation.we_are_home:
+  icon: mdi:home
 
 ###################################
 ##  Homeassistant Section
@@ -102,14 +106,16 @@ binary_sensor.living_room_thermostat_butterfly_online:
 
 sensor.living_room_thermostat_butterfly_humidity:
   friendly_name: 'Humidity'
+  icon: water-percent
   
 sensor.living_room_thermostat_butterfly_hvac_state:
   friendly_name: 'HVAC State'
-  hidden: true
-  
+  icon: mdi:nest-thermostat
+
 sensor.living_room_thermostat_butterfly_operation_mode:
   friendly_name: 'Op Mode'
-  
+  icon: mdi:air-conditioner
+
 sensor.living_room_thermostat_butterfly_target:
   friendly_name: 'Temperature Target'
   

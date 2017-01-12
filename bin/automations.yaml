@@ -15,6 +15,10 @@
   action:
     - service: switch.turn_on
       entity_id: switch.corner_light
+    - service: notify.rdpi
+      data:
+        title: 'Automation'
+        message: Run the automation for lights on with nest
 
 ###############
 # Turn off firelight when corner light is turned on after 1min
