@@ -14,7 +14,7 @@
     
     chromecast:
       friendly_name: 'ChromeCast Pastarun'
-      value_template: "{{ 'Online' if is_state('device_tracker.chromecast', 'home') else 'Offline' }}"
+      value_template: "{{ 'On' if is_state('device_tracker.chromecast', 'home') else 'Off' }}"
 
 ##################################
 ## StateAttribute Sensors

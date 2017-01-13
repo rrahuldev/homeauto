@@ -65,3 +65,32 @@
       data:
         title: 'Nest Mode'
         message: 'Fan ON under away mode'
+        
+###############
+# Increase TV volume when aircon on
+- alias: Increase TV volume
+  trigger:
+    - platform: state
+      entity_id: sensor.living_room_thermostat_butterfly_hvac_state
+      state: 'heating'
+  condition:
+    - condition: state
+      entity_id: sensor.samsung_tv
+      state: 'On'
+  action:
+    - service: script.volume_increase
+      
+###############
+# Decrease TV volume when aircon off
+- alias: Increase TV volume
+  trigger:
+    - platform: state
+      entity_id: sensor.living_room_thermostat_butterfly_hvac_state
+      state: 'off'
+  condition:
+    - condition: state
+      entity_id: sensor.samsung_tv
+      state: 'On'
+  action:
+    - service: script.volume_decrease
+      

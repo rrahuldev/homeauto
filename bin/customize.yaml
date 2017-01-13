@@ -3,10 +3,25 @@
 ###################################
 switch.corner_light: 
   friendly_name: 'Corner Light'
-  icon: 
-    state_off: mdi:lightbulb-outline
-    state_on: mdi:light-on-outline
+  icon: mdi:lightbulb-outline
+   # state_on: mdi:light-on-outline
   # emulated_hue: true
+
+switch.sound_power:
+  #friendly_name: 'Sound bar On/Off'
+  icon: mdi:speaker
+
+switch.tv_power:
+#  friendly_name: 'TV On/Off'
+  icon: mdi:television-guide
+
+switch.volume_control:
+ # friendly_name: 'Volume Up/Down'
+  icon: mdi:volume-high
+
+#switch.broadlink_:
+#  friendly_name: 'Volume up/down'
+#  icon: mdi:sound
 
 ###################################
 ##  Lights Section
@@ -81,13 +96,15 @@ media_player.pastarun:
 media_player._un65ju6700_un65ju6700:
   hidden: true
 
+device_tracker.broadlink_rmpro:
+  hidden: true
 ###################################
 ##  Nest Sensors
 ###################################
 binary_sensor.living_room_thermostat_butterfly_fan:
   friendly_name: 'Fan'
   icon: mdi:fan
-  
+
 binary_sensor.living_room_thermostat_butterfly_has_leaf:
   friendly_name: 'Eco Temperature'
   hidden: true
@@ -99,7 +116,7 @@ binary_sensor.living_room_thermostat_butterfly_is_locked:
 binary_sensor.living_room_thermostat_butterfly_is_using_emergency_heat:
   friendly_name: 'Emergency Heat'
   hidden: true
-  
+
 binary_sensor.living_room_thermostat_butterfly_online:
   friendly_name: 'Nest Online'
   hidden: true
@@ -107,7 +124,7 @@ binary_sensor.living_room_thermostat_butterfly_online:
 sensor.living_room_thermostat_butterfly_humidity:
   friendly_name: 'Humidity'
   icon: water-percent
-  
+
 sensor.living_room_thermostat_butterfly_hvac_state:
   friendly_name: 'HVAC State'
   icon: mdi:nest-thermostat
@@ -118,7 +135,7 @@ sensor.living_room_thermostat_butterfly_operation_mode:
 
 sensor.living_room_thermostat_butterfly_target:
   friendly_name: 'Temperature Target'
-  
+
 sensor.living_room_thermostat_butterfly_temperature:
   friendly_name: 'Temperature'
 
