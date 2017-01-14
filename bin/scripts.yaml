@@ -15,6 +15,8 @@ safe_mode:
       data:
         entity_id: light.hall_light
         brightness: 120
+    - alias: Turn off media center
+      service: script.media_off
     - delay:
         # supports seconds, milliseconds, minutes, hours
         minutes: 1
@@ -46,8 +48,8 @@ night_mode:
       service: light.turn_on
       data:
         entity_id: light.bedroom_light      
-    - alias: Turn off window light
-      service: light.turn_off
+    - alias: Turn on window light
+      service: light.turn_on
       data:
         entity_id: light.hall_light
     - alias: Set nest to night temperature 71
@@ -55,10 +57,56 @@ night_mode:
       data:
         entity_id: climate.living_room_butterfly
         temperature: 71
+    - alias: Turn off media center
+      service: script.media_off
+    - delay:
+        minutes: 1
+    - alias: Turn off window light
+      service: light.turn_off
+      data:
+        entity_id: light.hall_light        
     - service: notify.rdpi
       data:
         message: Night-mode complete
-        
+
+media_on:
+  alias: Media turn on
+  sequence:
+    - alias: Turn on TV
+      service: switch.turn_on
+      data:
+        entity_id: switch.tv_power
+    - delay:
+        seconds: 1
+    - alias: Turn on Sound
+      service: switch.turn_on
+      data:
+        entity_id: switch.sound_power
+    - alias: notify
+      service: notify.rdpi
+      data:
+        title: Script
+        message: Media turn on complete
+
+media_off:
+  alias: Media turn off
+  sequence:
+    - alias: Turn off TV
+      service: switch.turn_off
+      data:
+        entity_id: switch.tv_power
+    - delay:
+        seconds: 1
+    - alias: Turn on Sound
+      service: switch.turn_off
+      data:
+        entity_id: switch.sound_power
+    - alias: notify
+      service: notify.rdpi
+      data:
+        title: Script
+        message: Media turn off complete
+
 volume_increase:
   alias: Increase volume 5 times
   sequence:
@@ -90,6 +138,11 @@ volume_increase:
       service: switch.turn_on
       data:
         entity_id: switch.volume_control
+    - alias: notify
+      service: notify.rdpi
+      data:
+        title: Script
+        message: Volume Up complete
 
 volume_decrease:
   alias: Increase volume 5 times
@@ -122,3 +175,8 @@ volume_decrease:
       service: switch.turn_off
       data:
         entity_id: switch.volume_control
+    - alias: notify
+      service: notify.rdpi
+      data:
+        title: Script
+        message: Volume Down complete

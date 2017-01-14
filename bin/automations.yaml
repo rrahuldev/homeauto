@@ -82,7 +82,7 @@
       
 ###############
 # Decrease TV volume when aircon off
-- alias: Increase TV volume
+- alias: Derease TV volume
   trigger:
     - platform: state
       entity_id: sensor.living_room_thermostat_butterfly_hvac_state

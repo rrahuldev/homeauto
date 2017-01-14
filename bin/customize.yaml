@@ -37,7 +37,7 @@ light.bedroom_light:
   # emulated_hue: true
 
 ###################################
-##  Groups
+##  Automations
 ###################################
 
 automation.away_fan_on:
@@ -49,6 +49,11 @@ automation.turn_off_firelight:
 automation.we_are_home:
   icon: mdi:home
 
+automation.increase_tv_volume:
+  icon: mdi:volume-high
+  
+automation.decrease_tv_volume:
+  icon: mdi:volume-low
 ###################################
 ##  Homeassistant Section
 ###################################
