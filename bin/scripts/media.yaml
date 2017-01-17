@@ -1,0 +1,60 @@
+#########################
+# media on
+media_on:
+  alias: Media turn on
+  sequence:
+  - alias: Turn on TV
+    service: switch.turn_on
+    data:
+      entity_id: switch.tv_power
+  - delay:
+      seconds: 1
+  - alias: Turn on Sound
+    service: switch.turn_on
+    data:
+      entity_id: switch.sound_power
+  - delay:
+      seconds: 5
+  - condition: state
+    entity_id: sensor.samsung_tv
+    state: 'On'
+  - alias: Turn off TV
+    service: switch.turn_off
+    data:
+      entity_id: switch.tv_power
+  - alias: notify
+    service: notify.rdpi
+    data:
+      title: Script
+      message: Media turn on complete
+
+###########################
+# media off
+media_off:
+  alias: Media turn off
+  sequence:
+    - alias: Turn off TV
+      service: switch.turn_off
+      data:
+        entity_id: switch.tv_power
+    - delay:
+        seconds: 1
+    - alias: Turn off Sound
+      service: switch.turn_off
+      data:
+        entity_id: switch.sound_power
+    - delay:
+        seconds: 15
+    - condition: state
+      entity_id: sensor.samsung_tv
+      state: 'Off'
+    - alias: Turn off TV
+      service: switch.turn_off
+      data:
+        entity_id: switch.tv_power
+    - alias: notify
+      service: notify.rdpi
+      data:
+        title: Script
+        message: Media turn off complete
+

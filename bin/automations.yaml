@@ -7,7 +7,8 @@
   trigger:
     - platform: state
       entity_id: sensor.nest_away_mode
-      state: 'False'
+      from: 'True'
+      to: 'False'
   condition:
     - condition: state
       entity_id: sun.sun
@@ -72,7 +73,8 @@
   trigger:
     - platform: state
       entity_id: sensor.living_room_thermostat_butterfly_hvac_state
-      state: 'heating'
+      from: 'off'
+      to: 'heating'
   condition:
     - condition: state
       entity_id: sensor.samsung_tv
@@ -82,11 +84,12 @@
       
 ###############
 # Decrease TV volume when aircon off
-- alias: Derease TV volume
+- alias: Decrease TV volume
   trigger:
     - platform: state
       entity_id: sensor.living_room_thermostat_butterfly_hvac_state
-      state: 'off'
+      from: 'heating'
+      to: 'off'
   condition:
     - condition: state
       entity_id: sensor.samsung_tv

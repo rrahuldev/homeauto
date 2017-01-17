@@ -128,7 +128,7 @@ binary_sensor.living_room_thermostat_butterfly_online:
 
 sensor.living_room_thermostat_butterfly_humidity:
   friendly_name: 'Humidity'
-  icon: water-percent
+  icon: mdi:water-percent
 
 sensor.living_room_thermostat_butterfly_hvac_state:
   friendly_name: 'HVAC State'

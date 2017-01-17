@@ -1,0 +1,75 @@
+# Volume scripts
+volume_increase:
+  alias: Increase volume 5 times
+  sequence:
+    - alias: Volume Up
+      service: switch.turn_on
+      data:
+        entity_id: switch.volume_control
+    - delay:
+        seconds: 1
+    - alias: Volume Up
+      service: switch.turn_on
+      data:
+        entity_id: switch.volume_control
+    - delay:
+        seconds: 1
+    - alias: Volume Up
+      service: switch.turn_on
+      data:
+        entity_id: switch.volume_control
+    - delay:
+        seconds: 1
+    - alias: Volume Up
+      service: switch.turn_on
+      data:
+        entity_id: switch.volume_control
+    - delay:
+        seconds: 1
+    - alias: Volume Up
+      service: switch.turn_on
+      data:
+        entity_id: switch.volume_control
+    - alias: notify
+      service: notify.rdpi
+      data:
+        title: Script
+        message: Volume Up complete
+
+#scripts
+volume_decrease:
+  alias: Increase volume 5 times
+  sequence:
+    - alias: Volume Down
+      service: switch.turn_off
+      data:
+        entity_id: switch.volume_control
+    - delay:
+        seconds: 1
+    - alias: Volume Down
+      service: switch.turn_off
+      data:
+        entity_id: switch.volume_control
+    - delay:
+        seconds: 1
+    - alias: Volume Down
+      service: switch.turn_off
+      data:
+        entity_id: switch.volume_control
+    - delay:
+        seconds: 1
+    - alias: Volume Down
+      service: switch.turn_off
+      data:
+        entity_id: switch.volume_control
+    - delay:
+        seconds: 1
+    - alias: Volume Down
+      service: switch.turn_off
+      data:
+        entity_id: switch.volume_control
+    - alias: notify
+      service: notify.rdpi
+      data:
+        title: Script
+        message: Volume Down complete

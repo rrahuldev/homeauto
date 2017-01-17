@@ -68,7 +68,7 @@ notify:
 ## include files
 switch: !include bin/switches.yaml
 group: !include bin/group.yaml
-script: !include bin/scripts.yaml
+script: !include_dir_merge_named bin/scripts
 sensor: !include bin/sensors.yaml
 automation: !include bin/automations.yaml
 
