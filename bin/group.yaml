@@ -44,5 +44,5 @@ nest:
     - sensor.living_room_thermostat_butterfly_hvac_state
     - sensor.living_room_thermostat_butterfly_target
     - sensor.living_room_thermostat_butterfly_temperature
-    - sensor.nest_away_mode
+    - binary_sensor.nest_away_mode
     - climate.living_room_butterfly

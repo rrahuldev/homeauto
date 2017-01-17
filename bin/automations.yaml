@@ -6,9 +6,9 @@
 - alias: We are home
   trigger:
     - platform: state
-      entity_id: sensor.nest_away_mode
-      from: 'True'
-      to: 'False'
+      entity_id: binary_sensor.nest_away_mode
+      from: 'on'
+      to: 'off'
   condition:
     - condition: state
       entity_id: sun.sun
@@ -59,8 +59,8 @@
       state: 'on'
   condition:
     - condition: state
-      entity_id: sensor.nest_away_mode
-      state: 'True'
+      entity_id: binary_sensor.nest_away_mode
+      state: 'on'
   action:
     - service: notify.rdpi
       data:
