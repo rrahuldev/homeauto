@@ -15,8 +15,6 @@ safe_mode:
       data:
         entity_id: light.hall_light
         brightness: 120
-    - alias: Turn off media center
-      service: script.media_off
     - delay:
         # supports seconds, milliseconds, minutes, hours
         minutes: 1

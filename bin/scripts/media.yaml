@@ -13,15 +13,6 @@ media_on:
     service: switch.turn_on
     data:
       entity_id: switch.sound_power
-  - delay:
-      seconds: 5
-  - condition: state
-    entity_id: sensor.samsung_tv
-    state: 'On'
-  - alias: Turn off TV
-    service: switch.turn_off
-    data:
-      entity_id: switch.tv_power
   - alias: notify
     service: notify.rdpi
     data:
@@ -43,15 +34,6 @@ media_off:
       service: switch.turn_off
       data:
         entity_id: switch.sound_power
-    - delay:
-        seconds: 15
-    - condition: state
-      entity_id: sensor.samsung_tv
-      state: 'Off'
-    - alias: Turn off TV
-      service: switch.turn_off
-      data:
-        entity_id: switch.tv_power
     - alias: notify
       service: notify.rdpi
       data:

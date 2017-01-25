@@ -59,6 +59,9 @@ notify:
   name: !secret pushname
   api_key: !secret pushbullet
 
+camera:
+  - platform: local_file
+    file_path: /home/pi/rD/pylab/perFinance.jpg
 #emulated_hue:
 #  host_ip: !secret hostipaddress
 #  type: google_home

@@ -20,8 +20,6 @@ night_mode:
       data:
         entity_id: climate.living_room_butterfly
         temperature: 71
-    - alias: Turn off media center
-      service: script.media_off
     - delay:
         minutes: 1
     - alias: Turn off window light

@@ -3,7 +3,7 @@
 ##################################
 - platform: template
   sensors:
-     nest_away_mode:
-       friendly_name: 'Nest Away Mode'
-       value_template: "{{ is_state_attr('climate.living_room_butterfly', 'away_mode', 'on') }}"
-       sensor_class: motion
+    nest_away_mode:
+      friendly_name: 'Nest Away Mode'
+      value_template: "{{ is_state_attr('climate.living_room_butterfly', 'away_mode', 'on') }}"
+      sensor_class: motion
