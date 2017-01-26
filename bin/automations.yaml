@@ -12,8 +12,23 @@
           entity_id: device_tracker.rahul_ph
           state: 'not_home'
         - condition: state
+          entity_id: device_tracker.ipad_rahul
+          state: 'not_home'
+        - condition: state
+          entity_id: device_tracker.ipad_divya
+          state: 'not_home'
+        - condition: state
+          entity_id: device_tracker.macbook_pro
+          state: 'not_home'
+        - condition: state
           entity_id: device_tracker.divya_ph
           state: 'not_home'
+        - condition: state
+          entity_id: sensor.samsung_tv
+          state: 'off'
+        - condition: state
+          entity_id: sensor.chromecast
+          state: 'off'
   action:
     - service: notify.rdpi
       data:
@@ -69,7 +84,7 @@
     service: notify.rdpi
     data:
       title: 'Bad Login'
-      message: There was a Hack attempt! Go Check Hass GUI for details.
+      message: There was a Hack attempt! Go Check HA GUI for details.
 
 ###############
 # Notify when fan is on under away settings
@@ -97,9 +112,20 @@
       from: 'off'
       to: 'heating'
   condition:
-    - condition: state
-      entity_id: sensor.samsung_tv
-      state: 'On'
+    - condition: or
+      conditions:
+        - condition: state
+          entity_id: sensor.samsung_tv
+          state: 'On'
+        - condition: state
+          entity_id: media_player._un65ju6700_un65ju6700:
+          state: 'on'
+        - condition: state
+          entity_id: sensor.chromecast
+          state: 'On'
+        - condition: state
+          entity_id: media_player.pastarun:
+          state: 'on'
   action:
     - service: script.volume_increase
       
@@ -112,9 +138,20 @@
       from: 'heating'
       to: 'off'
   condition:
-    - condition: state
-      entity_id: sensor.samsung_tv
-      state: 'On'
+    - condition: or
+      conditions:
+        - condition: state
+          entity_id: sensor.samsung_tv
+          state: 'On'
+        - condition: state
+          entity_id: media_player._un65ju6700_un65ju6700:
+          state: 'on'
+        - condition: state
+          entity_id: sensor.chromecast
+          state: 'On'
+        - condition: state
+          entity_id: media_player.pastarun:
+          state: 'on'
   action:
     - service: script.volume_decrease
       

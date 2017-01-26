@@ -144,3 +144,14 @@ sensor.living_room_thermostat_butterfly_target:
 sensor.living_room_thermostat_butterfly_temperature:
   friendly_name: 'Temperature'
 
+###################################
+##  Device Tracker Gadgets
+###################################
+device_tracker.ipad_divya:
+  hidden: true
+  
+device_tracker.ipad_rahul:
+  hidden: true
+  
+device_tracker.macbook_pro:
+  hidden: true
