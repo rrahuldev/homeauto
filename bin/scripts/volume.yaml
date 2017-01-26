@@ -1,6 +1,6 @@
 # Volume scripts
 volume_increase:
-  alias: Increase volume 5 times
+  alias: Increase volume
   sequence:
     - alias: Volume Up
       service: switch.turn_on
@@ -38,7 +38,7 @@ volume_increase:
 
 #scripts
 volume_decrease:
-  alias: Increase volume 5 times
+  alias: Decrease volume
   sequence:
     - alias: Volume Down
       service: switch.turn_off

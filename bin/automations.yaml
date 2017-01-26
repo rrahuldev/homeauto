@@ -1,4 +1,25 @@
 # Automations
+###############
+- alias: Detect Motion
+  trigger:
+    - platform: state
+      entity_id: sensor.living_room_thermostat_butterfly_operation_mode
+      from: 'eco'
+  condition:
+    - condition: and
+      conditions:
+        - condition: state
+          entity_id: device_tracker.rahul_ph
+          state: 'not_home'
+        - condition: state
+          entity_id: device_tracker.divya_ph
+          state: 'not_home'
+  action:
+    - service: notify.rdpi
+      data:
+        title: 'Automation'
+        message: Motion detected
+
 
 ###############
 # Turn on corner light when nest switches from 
