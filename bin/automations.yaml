@@ -118,13 +118,13 @@
           entity_id: sensor.samsung_tv
           state: 'On'
         - condition: state
-          entity_id: media_player._un65ju6700_un65ju6700:
+          entity_id: media_player._un65ju6700_un65ju6700
           state: 'on'
         - condition: state
           entity_id: sensor.chromecast
           state: 'On'
         - condition: state
-          entity_id: media_player.pastarun:
+          entity_id: media_player.pastarun
           state: 'on'
   action:
     - service: script.volume_increase
@@ -144,13 +144,13 @@
           entity_id: sensor.samsung_tv
           state: 'On'
         - condition: state
-          entity_id: media_player._un65ju6700_un65ju6700:
+          entity_id: media_player._un65ju6700_un65ju6700
           state: 'on'
         - condition: state
           entity_id: sensor.chromecast
           state: 'On'
         - condition: state
-          entity_id: media_player.pastarun:
+          entity_id: media_player.pastarun
           state: 'on'
   action:
     - service: script.volume_decrease
