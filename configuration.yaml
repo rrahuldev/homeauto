@@ -30,7 +30,7 @@ mqtt:
   port: 1883
   client_id: home-assistant-1
   username: !secret mqtt_uid
-  password: !secret mqtt_pwd
+ # password: !secret mqtt_pwd
 
 ## Start of devices
 light:
@@ -61,7 +61,7 @@ notify:
 
 camera:
   - platform: local_file
-    file_path: /home/pi/rD/pylab/perFinance.jpg
+    file_path: /home/pi/rd/pylab/perFinance.jpg
 
 ## include files
 switch: !include bin/switches.yaml
