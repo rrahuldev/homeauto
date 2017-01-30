@@ -25,12 +25,12 @@ tts:
   platform: google
   cache: false
 
-mqtt:
-  broker: 127.0.0.1
-  port: 1883
-  client_id: home-assistant-1
-  username: !secret mqtt_uid
- # password: !secret mqtt_pwd
+#mqtt:
+#  broker: 127.0.0.1
+#  port: 1883
+#  client_id: home-assistant-1
+#  username: !secret mqtt_uid
+#  password: !secret mqtt_pwd
 
 ## Start of devices
 light:
