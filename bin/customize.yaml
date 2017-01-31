@@ -166,3 +166,16 @@ device_tracker.macbook_pro:
 
 binary_sensor.away_mode:
   icon: mdi:run-fast
+  
+
+###################################
+##  Date / Time
+###################################
+sensor.date:
+  hidden: true
+  
+sensor.time:
+  hidden: true
+  
+sensor.internet_time:
+  hidden: true
