@@ -61,10 +61,10 @@ notify:
 
 camera:
   - platform: local_file
-    file_path: /home/pi/rd/pylab/perFinance.jpg
+    file_path: /home/pi/rd/pylab/perFinance.png
 
 shell_command:
-  broadlink_check: './bin/shell_scripts/bipcheck.sh'
+  broadlink_check: './bin/shell_scripts/bipcheck.sh > ./test.log'
 
     
 ## include files
