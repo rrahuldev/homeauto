@@ -38,7 +38,7 @@
         - sensor.chromecast
         - media_player.pastarun
         - media_player._un65ju6700_un65ju6700
-        - climate.living_room_butterfly
+        - sensor.living_room_thermostat_butterfly_hvac_state
         
     away_mode:
       friendly_name: "Away Status"
@@ -56,6 +56,7 @@
         {%- endif -%}
       entity_id:
         - binary_sensor.nest_away_mode
+        - sensor.living_room_thermostat_butterfly_hvac_state
         - device_tracker.rahul_ph
         - device_tracker.divya_ph
         - device_tracker.ipad_rahul
