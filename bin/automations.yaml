@@ -90,7 +90,6 @@
     - platform: state
       entity_id: sensor.living_room_thermostat_butterfly_hvac_state
       from: 'off'
-      to: 'heating'
   condition:
     - condition: state
       entity_id: binary_sensor.tv_status
@@ -104,7 +103,6 @@
   trigger:
     - platform: state
       entity_id: sensor.living_room_thermostat_butterfly_hvac_state
-      from: 'heating'
       to: 'off'
   condition:
     - condition: state
