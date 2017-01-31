@@ -63,6 +63,10 @@ camera:
   - platform: local_file
     file_path: /home/pi/rd/pylab/perFinance.jpg
 
+shell_command:
+  broadlink_check: './bin/shell_scripts/bipcheck.sh'
+
+    
 ## include files
 switch: !include bin/switches.yaml
 group: !include bin/group.yaml
