@@ -102,7 +102,7 @@
       data:
         title: 'Nest Mode'
         message: 'Fan ON under away mode'
-        
+
 ###############
 # Increase TV volume when aircon on
 - alias: Increase TV volume
@@ -128,7 +128,7 @@
           state: 'on'
   action:
     - service: script.volume_increase
-      
+
 ###############
 # Decrease TV volume when aircon off
 - alias: Decrease TV volume
@@ -154,4 +154,3 @@
           state: 'on'
   action:
     - service: script.volume_decrease
-      

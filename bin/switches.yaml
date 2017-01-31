@@ -2,7 +2,7 @@
 ## Broadlink switches
 ##################################
 - platform: broadlink
-  host: 192.168.1.146
+  host: !secret broadlinkp2
   mac: 'B4:43:0D:EE:F4:FE'
   switches:
     sound_bar:

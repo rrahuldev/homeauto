@@ -6,7 +6,7 @@ homeassistant:
   unit_system: imperial
   time_zone: America/Chicago
   customize: !include bin/customize.yaml
-  
+
 # introduction:
 frontend:
 http:
@@ -62,11 +62,6 @@ notify:
 camera:
   - platform: local_file
     file_path: /home/pi/rD/pylab/perFinance.jpg
-#emulated_hue:
-#  host_ip: !secret hostipaddress
-#  type: google_home
-#  listen_port: 80
-#  expose_by_default: false
 
 ## include files
 switch: !include bin/switches.yaml

@@ -54,6 +54,9 @@ automation.increase_tv_volume:
   
 automation.decrease_tv_volume:
   icon: mdi:volume-low
+  
+automation.detect_motion:
+  icon: mdi:run-fast
 ###################################
 ##  Homeassistant Section
 ###################################
