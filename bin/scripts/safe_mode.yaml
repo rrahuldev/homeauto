@@ -23,14 +23,13 @@ safe_mode:
       data:
         entity_id: climate.living_room_butterfly
         away_mode: true
+    - alias: Turn off window light if sun is above horizon
+      service_template: >-
+        {%- if is_state("sun.sun", "above_horizon") -%}       
+        light.turn_off
+        {%- endif -%}
+      data:
+        entity_id: light.hall_light
     - service: notify.rdpi
       data:
         message: Safe-mode complete
-    - condition: sun 
-      before: sunset 
-      # Optional offset value 
-      before_offset: "1:00:00"
-    - alias: Turn off window light
-      service: light.turn_off
-      data:
-        entity_id: light.hall_light

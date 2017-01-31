@@ -6,29 +6,9 @@
       entity_id: sensor.living_room_thermostat_butterfly_operation_mode
       from: 'eco'
   condition:
-    - condition: and
-      conditions:
-        - condition: state
-          entity_id: device_tracker.rahul_ph
-          state: 'not_home'
-        - condition: state
-          entity_id: device_tracker.ipad_rahul
-          state: 'not_home'
-        - condition: state
-          entity_id: device_tracker.ipad_divya
-          state: 'not_home'
-        - condition: state
-          entity_id: device_tracker.macbook_pro
-          state: 'not_home'
-        - condition: state
-          entity_id: device_tracker.divya_ph
-          state: 'not_home'
-        - condition: state
-          entity_id: sensor.samsung_tv
-          state: 'off'
-        - condition: state
-          entity_id: sensor.chromecast
-          state: 'off'
+    - condition: state
+      entity_id: binary_sensor.away_mode
+      state: 'on'
   action:
     - service: notify.rdpi
       data:
@@ -42,7 +22,7 @@
 - alias: We are home
   trigger:
     - platform: state
-      entity_id: binary_sensor.nest_away_mode
+      entity_id: binary_sensor.away_mode
       from: 'on'
       to: 'off'
   condition:
@@ -91,11 +71,11 @@
 - alias: Away Fan On
   trigger:
     - platform: state
-      entity_id: binary_sensor.living_room_thermostat_butterfly_fan
-      state: 'on'
+      entity_id: sensor.living_room_thermostat_butterfly_hvac_state
+      from: 'off'
   condition:
     - condition: state
-      entity_id: binary_sensor.nest_away_mode
+      entity_id: binary_sensor.away_mode
       state: 'on'
   action:
     - service: notify.rdpi
@@ -112,20 +92,9 @@
       from: 'off'
       to: 'heating'
   condition:
-    - condition: or
-      conditions:
-        - condition: state
-          entity_id: sensor.samsung_tv
-          state: 'On'
-        - condition: state
-          entity_id: media_player._un65ju6700_un65ju6700
-          state: 'on'
-        - condition: state
-          entity_id: sensor.chromecast
-          state: 'On'
-        - condition: state
-          entity_id: media_player.pastarun
-          state: 'on'
+    - condition: state
+      entity_id: binary_sensor.tv_status
+      state: 'on'
   action:
     - service: script.volume_increase
 
@@ -138,19 +107,8 @@
       from: 'heating'
       to: 'off'
   condition:
-    - condition: or
-      conditions:
-        - condition: state
-          entity_id: sensor.samsung_tv
-          state: 'On'
-        - condition: state
-          entity_id: media_player._un65ju6700_un65ju6700
-          state: 'on'
-        - condition: state
-          entity_id: sensor.chromecast
-          state: 'On'
-        - condition: state
-          entity_id: media_player.pastarun
-          state: 'on'
+    - condition: state
+      entity_id: binary_sensor.tv_status
+      state: 'on'
   action:
     - service: script.volume_decrease

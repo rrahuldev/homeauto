@@ -1,8 +1,14 @@
 ##################################
-## WEATHER
+## WEATHER & Date
 ##################################
 - platform: yr
 
+- platform: time_date
+  display_options:
+    - 'time'
+    - 'date'
+    - 'beat'
+    
 ##################################
 ## Device Tracker Sensors
 ##################################

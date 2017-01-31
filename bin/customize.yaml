@@ -116,11 +116,11 @@ binary_sensor.tv_status:
 ###################################
 binary_sensor.living_room_thermostat_butterfly_fan:
   friendly_name: 'Fan'
-  icon: mdi:fan
+  hidden: true
 
 binary_sensor.living_room_thermostat_butterfly_has_leaf:
   friendly_name: 'Eco Temperature'
-  hidden: true
+  icon: mdi:leaf
 
 binary_sensor.living_room_thermostat_butterfly_is_locked:
   friendly_name: 'Locked'
@@ -165,4 +165,4 @@ device_tracker.macbook_pro:
   hidden: true
 
 binary_sensor.away_mode:
-  icon: mdi:human
+  icon: mdi:run-fast

@@ -47,9 +47,9 @@
           and is_state("device_tracker.ipad_divya", "not_home")
           and is_state("device_tracker.macbook_pro", "not_home")
           and is_state("binary_sensor.tv_status", "off") -%}
-        True
+        on
         {%- else -%}
-        False
+        off
         {%- endif -%}
       entity_id:
         - binary_sensor.nest_away_mode

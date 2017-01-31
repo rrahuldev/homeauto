@@ -40,7 +40,7 @@ system_settings:
 nest:
   name: Nest
   entities:
-    - binary_sensor.living_room_thermostat_butterfly_fan
+    - binary_sensor.living_room_thermostat_butterfly_has_leaf
     - sensor.living_room_thermostat_butterfly_humidity
     - sensor.living_room_thermostat_butterfly_operation_mode
     - sensor.living_room_thermostat_butterfly_hvac_state
