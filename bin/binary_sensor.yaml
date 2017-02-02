@@ -29,7 +29,7 @@
         or is_state("media_player._un65ju6700_un65ju6700", "off")
         or is_state("media_player.pastarun", "on")
         or is_state("media_player.pastarun", "off")) -%}
-        on     
+        on
         {%- else -%}
         off
         {%- endif -%}
