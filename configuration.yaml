@@ -66,11 +66,10 @@ camera:
 shell_command:
   broadlink_check: './bin/shell_scripts/bipcheck.sh > ./test.log'
 
-    
+
 ## include files
 switch: !include bin/switches.yaml
 group: !include bin/group.yaml
 script: !include_dir_merge_named bin/scripts
 sensor: !include bin/sensors.yaml
 automation: !include bin/automations.yaml
-binary_sensor: !include bin/binary_sensor.yaml

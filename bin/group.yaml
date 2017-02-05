@@ -5,7 +5,7 @@ awesome_people:
   entities:
     - device_tracker.rahul_ph
     - device_tracker.divya_ph
-    - binary_sensor.away_mode
+    - sensor.away_mode
 
 environ:
   name: Climate
@@ -26,7 +26,7 @@ media_all:
   entities:
     - sensor.samsung_tv
     - sensor.chromecast
-    - binary_sensor.tv_status
+    - sensor.tv_status
 
 system_settings:
   name: System
@@ -46,5 +46,10 @@ nest:
     - sensor.living_room_thermostat_butterfly_hvac_state
     - sensor.living_room_thermostat_butterfly_target
     - sensor.living_room_thermostat_butterfly_temperature
-    - binary_sensor.nest_away_mode
+    - sensor.nest_away_mode
     - climate.living_room_butterfly
+
+finance:
+  name: Finance
+  entities:
+    - camera.local_file

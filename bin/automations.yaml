@@ -7,7 +7,7 @@
       from: 'eco'
   condition:
     - condition: state
-      entity_id: binary_sensor.away_mode
+      entity_id: sensor.away_mode
       state: 'on'
   action:
     - service: notify.rdpi
@@ -22,7 +22,7 @@
 - alias: We are home
   trigger:
     - platform: state
-      entity_id: binary_sensor.away_mode
+      entity_id: sensor.away_mode
       from: 'on'
       to: 'off'
   condition:
@@ -75,7 +75,7 @@
       from: 'off'
   condition:
     - condition: state
-      entity_id: binary_sensor.away_mode
+      entity_id: sensor.away_mode
       state: 'on'
   action:
     - service: notify.rdpi
@@ -92,7 +92,7 @@
       from: 'off'
   condition:
     - condition: state
-      entity_id: binary_sensor.tv_status
+      entity_id: sensor.tv_status
       state: 'on'
   action:
     - service: script.volume_increase
@@ -106,7 +106,7 @@
       to: 'off'
   condition:
     - condition: state
-      entity_id: binary_sensor.tv_status
+      entity_id: sensor.tv_status
       state: 'on'
   action:
     - service: script.volume_decrease

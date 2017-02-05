@@ -107,7 +107,7 @@ media_player._un65ju6700_un65ju6700:
 device_tracker.broadlink_rmpro:
   hidden: true
 
-binary_sensor.tv_status:
+sensor.tv_status:
   icon: mdi:television
 #  hidden: true
 
@@ -152,6 +152,8 @@ sensor.living_room_thermostat_butterfly_target:
 sensor.living_room_thermostat_butterfly_temperature:
   friendly_name: 'Temperature'
 
+sensor.nest_away_mode:
+  icon: mdi:snapchat
 ###################################
 ##  Device Tracker Gadgets
 ###################################
@@ -164,7 +166,7 @@ device_tracker.ipad_rahul:
 device_tracker.macbook_pro:
   hidden: true
 
-binary_sensor.away_mode:
+sensor.away_mode:
   icon: mdi:run-fast
   
 
