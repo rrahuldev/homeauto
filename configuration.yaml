@@ -64,7 +64,7 @@ camera:
     file_path: /home/pi/rd/pylab/perFinance.png
 
 shell_command:
-  broadlink_check: './bin/shell_scripts/bipcheck.sh > ./test.log'
+  broadlink_check: './bin/shell_scripts/bipcheck.sh'
 
 
 ## include files
