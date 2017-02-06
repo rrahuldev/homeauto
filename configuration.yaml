@@ -65,7 +65,7 @@ camera:
 
 shell_command:
   broadlink_check: './bin/shell_scripts/bipcheck.sh'
-
+  ha_update: './bin/shell_scripts/ha_update.sh'
 
 ## include files
 switch: !include bin/switches.yaml
