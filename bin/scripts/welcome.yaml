@@ -14,8 +14,8 @@ welcome_back:
         away_mode: false
     - alias: Turn on hall lights
       service_template: >-
-      {%- if is_state("sun.sun", "below_horizon") -%}
-        switch.turn_on
-      {%- endif -%}
+        {%- if is_state("sun.sun", "below_horizon") -%}
+          switch.turn_on
+        {%- endif -%}
       data:
         entity_id: switch.corner_light
