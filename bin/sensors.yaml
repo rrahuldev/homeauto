@@ -3,6 +3,21 @@
 ##################################
 - platform: yr
 
+- platform: template
+  sensors:
+    sunset_time:
+      friendly_name: 'Sunset Time'
+      value_template: >-
+        {%- set settime = states.sun.sun.attributes.nest_setting.split('T')[1][:5].replace(':','.') | float -%}
+        {%- if settime > 12 -%}
+          {{ (settime - 6.00).replace('.',':') }}
+        {%- else -%}
+          {{ (settime + 18.00).replace('.',':') }}
+        {%- endif -%}
+      entity_id:
+        - sensor.tv_status
+        - sensor.living_room_thermostat_butterfly_hvac_state
+      
 - platform: time_date
   display_options:
     - 'time'

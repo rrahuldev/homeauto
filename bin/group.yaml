@@ -12,6 +12,7 @@ environ:
   entities: 
     - sensor.yr_symbol
     - sun.sun
+    - sensor.sunset_time
 
 lights_all:
   name: Lights

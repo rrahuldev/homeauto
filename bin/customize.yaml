@@ -181,3 +181,6 @@ sensor.time:
   
 sensor.internet_time:
   hidden: true
+  
+sensor.sunset_time:
+  icon: mdi:sun
