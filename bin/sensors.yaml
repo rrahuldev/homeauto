@@ -8,11 +8,11 @@
     sunset_time:
       friendly_name: 'Sunset Time'
       value_template: >-
-        {%- set settime = states.sun.sun.attributes.nest_setting.split('T')[1][:5].replace(':','.') | float -%}
+        {%- set settime = states.sun.sun.attributes.next_setting.split('T')[1][:5].replace(':','.') | float -%}
         {%- if settime > 12 -%}
-          {{ (settime - 6.00).replace('.',':') }}
+          {{ (settime - 6.00) }}
         {%- else -%}
-          {{ (settime + 18.00).replace('.',':') }}
+          {{ (settime + 18.00) }}
         {%- endif -%}
       entity_id:
         - sensor.tv_status
