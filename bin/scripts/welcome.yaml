@@ -2,8 +2,7 @@
 welcome_back:
   alias: welcome back now
   sequence:
-    - alias: Check if we are away
-      condition: state
+    - condition: state
       entity_id: sensor.away_status
       state: 'on'
       
