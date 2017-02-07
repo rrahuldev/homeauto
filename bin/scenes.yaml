@@ -1,0 +1,21 @@
+####### Safe mode ##########
+- name: safemode
+  entities: 
+    light.hall_light:
+      state: on
+      brightness: 120
+    switch.corner_light:
+      state: off
+    light.bedroom_light:
+      state: off
+      
+- name: welcome_back
+  entities:
+    light.hall_light:
+      state: on
+      brightness: 255
+    switch.corner_light:
+      state: on
+    light.bedroom_light:
+      state: on
+      brightness: 120    
