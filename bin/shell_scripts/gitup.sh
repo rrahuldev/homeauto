@@ -1,5 +1,5 @@
 #!/bin/bash
-cdha
+cd /home/homeassistant/.homeassistant
 git add .
 git status
 echo -n "Enter the Description for the Change: "
