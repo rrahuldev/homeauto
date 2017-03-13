@@ -66,6 +66,7 @@ camera:
 shell_command:
   broadlink_check: 'sudo ./bin/shell_scripts/bipcheck.sh'
   ha_update: './bin/shell_scripts/ha_update.sh'
+  door_check: 'python /home/pi/rd/pylab/DoorCheck.py'
 
 input_boolean:
   away_mode_state:
@@ -80,3 +81,4 @@ script: !include_dir_merge_named bin/scripts
 sensor: !include bin/sensors.yaml
 automation: !include bin/automations.yaml
 scene: !include bin/scenes.yaml
+input_boolean: !include bin/input_boolean.yaml

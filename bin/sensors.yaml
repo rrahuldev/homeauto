@@ -116,10 +116,7 @@
     away_mode:
       friendly_name: "Away Status"
       value_template: >-
-        {%- if is_state("sensor.nest_away_mode", "on")
-        and is_state("device_tracker.rahul_ph", "not_home")
-        and is_state("device_tracker.divya_ph", "not_home")
-        and is_state("sensor.tv_status", "off") -%}
+        {%- if is_state("input_boolean.away_mode_state", "on") - %}
           on
         {%- else -%}
           off
@@ -133,6 +130,7 @@
         - device_tracker.ipad_divya
         - device_tracker.macbook_pro
         - sensor.tv_status
+        - input_boolean.away_mode_state
 
 ##################################
 ## Nest Away

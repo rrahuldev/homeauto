@@ -35,7 +35,7 @@
     - service: notify.rdpi
       data:
         title: 'Automation'
-        message: Run the automation for lights on with nest
+        message: Turn on light with door open
 
 ###############
 # Turn off firelight when corner light is turned on after 1min
@@ -82,7 +82,12 @@
       data:
         title: 'Nest Mode'
         message: 'Fan ON under away mode'
-
+    - alias: Nest to away
+      service: climate.set_away_mode
+      data:
+        entity_id: climate.living_room_butterfly
+        away_mode: true
+    
 ###############
 # Increase TV volume when aircon on
 - alias: Increase TV volume

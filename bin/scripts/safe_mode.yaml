@@ -12,12 +12,16 @@ safe_mode:
         {%- endif -%}
     - delay:
         # supports seconds, milliseconds, minutes, hours
-        minutes: 1
+        minutes: 5
     - alias: Nest to away
       service: climate.set_away_mode
       data:
         entity_id: climate.living_room_butterfly
         away_mode: true
+    - alias: Set away mode on
+      service: input_boolean.turn_on
+      data:
+        entity_id: input_boolean.away_mode_state
     - alias: turn off window light if more than 1hr away from sunset
       service_template: >-
         {%- if (states.sensor.time.state.replace(':','.') | float) > (states.sensor.sunset_time.state | float - 1) -%}
@@ -28,3 +32,5 @@ safe_mode:
     - service: notify.rdpi
       data:
         message: Safe-mode complete
+    - alias: run the door check
+      service: shell_command.door_check
