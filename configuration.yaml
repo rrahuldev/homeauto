@@ -72,7 +72,7 @@ input_boolean:
   away_mode_state:
     name: Away mode
     icon: mdi:alert-octagram
-    initial: on
+    initial: off
 
 ## include files
 switch: !include bin/switches.yaml

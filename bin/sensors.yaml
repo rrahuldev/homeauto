@@ -116,7 +116,7 @@
     away_mode:
       friendly_name: "Away Status"
       value_template: >-
-        {%- if is_state("input_boolean.away_mode_state", "on") - %}
+        {%- if is_state("input_boolean.away_mode_state", "on") -%}
           on
         {%- else -%}
           off
