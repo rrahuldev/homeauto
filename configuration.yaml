@@ -81,4 +81,3 @@ script: !include_dir_merge_named bin/scripts
 sensor: !include bin/sensors.yaml
 automation: !include bin/automations.yaml
 scene: !include bin/scenes.yaml
-input_boolean: !include bin/input_boolean.yaml
