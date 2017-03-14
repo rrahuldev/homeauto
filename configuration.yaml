@@ -53,7 +53,7 @@ device_tracker:
   - platform: nmap_tracker
     hosts: 192.168.1.100-150
     track_new_devices: no
-    interval_seconds: 30
+    interval_seconds: 60
 
 notify:
   platform: pushbullet
