@@ -154,6 +154,13 @@ sensor.living_room_thermostat_butterfly_temperature:
 
 sensor.nest_away_mode:
   icon: mdi:snapchat
+  
+###################################
+##  Sensors
+###################################  
+input_boolean.away_mode_state:
+  hidden: true
+
 ###################################
 ##  Device Tracker Gadgets
 ###################################
