@@ -35,7 +35,7 @@ tts:
 ## Start of devices
 light:
   platform: lifx
-  broadcast: 192.168.1.255
+#  broadcast: 192.168.1.255
 
 ifttt:
   key: !secret ifttt_key

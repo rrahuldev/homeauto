@@ -1,5 +1,8 @@
 # Automations
 ###############
+
+###############
+# Send motion detection notification if nest is set to eco under safe mode
 - alias: Detect Motion
   trigger:
     - platform: state
@@ -37,6 +40,7 @@
         title: 'Automation'
         message: Turn on light with door open
 
+
 ###############
 # Turn off firelight when corner light is turned on after 1min
 - alias: Turn off firelight
@@ -53,6 +57,7 @@
     - service: light.turn_off
       entity_id: light.hall_light
 
+
 ###############
 # Send a push notification when login failure is logged
 - alias: Login Failure
@@ -66,8 +71,10 @@
       title: 'Bad Login'
       message: There was a Hack attempt! Go Check HA GUI for details.
 
+
 ###############
 # Notify when fan is on under away settings
+# testing
 - alias: Away Fan On
   trigger:
     - platform: state
@@ -82,12 +89,13 @@
       data:
         title: 'Nest Mode'
         message: 'Fan ON under away mode'
-    - alias: Nest to away
-      service: climate.set_away_mode
-      data:
-        entity_id: climate.living_room_butterfly
-        away_mode: true
+#    - alias: Nest to away
+#      service: climate.set_away_mode
+ #     data:
+  #      entity_id: climate.living_room_butterfly
+   #     away_mode: true
     
+
 ###############
 # Increase TV volume when aircon on
 - alias: Increase TV volume
@@ -102,6 +110,7 @@
   action:
     - service: script.volume_increase
 
+
 ###############
 # Decrease TV volume when aircon off
 - alias: Decrease TV volume
@@ -115,3 +124,20 @@
       state: 'on'
   action:
     - service: script.volume_decrease
+
+###############
+# Turn on light 30mins before sunset
+- alias: Sun-down lights
+  trigger:
+    - platform: sun
+      event: sunset
+      offset: "-00:30:00"
+  condition:
+    - condition: state
+      entity_id: sensor.away_mode
+      state: 'off'
+  action:
+    - service: light.turn_on
+      entity_id: light.hall_light
+      data:
+        brightness: 180
