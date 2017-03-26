@@ -41,27 +41,6 @@
         message: Turn on light with door open
 
 ###############
-# Switch away mode to off after detecting phones 
-- alias: We are home
-  trigger:
-    - platform: state
-      entity_id: sensor.home_mode
-      from: 'off'
-      to: 'on'
-  condition:
-    - condition: state
-      entity_id: sun.sun
-      state: 'below_horizon'
-  action:
-    - service: switch.turn_on
-      entity_id: switch.corner_light
-    - service: notify.rdpi
-      data:
-        title: 'Automation'
-        message: Turn on light with home mode
-
-
-###############
 # Turn off firelight when corner light is turned on after 1min
 - alias: Turn off firelight
   trigger: 
