@@ -24,11 +24,6 @@ night_mode:
       service: switch.turn_off
       data:
         entity_id: switch.corner_light
-    - alias: Set nest to night temperature 71
-      service: climate.set_temperature
-      data:
-        entity_id: climate.living_room_butterfly
-        temperature: 71
     - delay:
         minutes: 1
     - alias: Turn off window light
@@ -41,6 +36,18 @@ night_mode:
       service: light.turn_off
       data:
         entity_id: light.bedroom_light
+    - alias: Set nest to night temperature
+      service: climate.set_temperature
+      data_template:
+        entity_id: climate.living_room_butterfly
+        temperature: >
+          {%- if is_state("sensor.living_room_thermostat_butterfly_operation_mode", "heat") -%}
+          71
+          {%- else -%}
+            {%- if is_state("sensor.living_room_thermostat_butterfly_operation_mode", "cool") -%}
+            77
+            {%- endif -%}
+          {%- endif -%}
     - service: notify.rdpi
       data:
         message: Night-mode complete

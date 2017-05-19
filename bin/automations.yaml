@@ -28,12 +28,13 @@
       entity_id: sensor.away_mode
       from: 'on'
       to: 'off'
-  condition:
-    - condition: state
-      entity_id: sun.sun
-      state: 'below_horizon'
   action:
-    - service: switch.turn_on
+    - service_template: >
+      {%- if is_state("sun.sun", "below_horizon") -%}
+        switch.turn_on
+      {%- else -%}
+        switch.turn_off
+      {%- endif -%}
       entity_id: switch.corner_light
     - service: notify.rdpi
       data:
@@ -125,16 +126,21 @@
     - service: script.volume_decrease
 
 ###############
-# Turn on light 30mins before sunset
-- alias: Sun-down lights
+# Turn on light 50mins before sunset
+- alias: Sun-down window lights
   trigger:
     - platform: sun
       event: sunset
-      offset: "-00:30:00"
+      offset: "-00:50:00"
   condition:
-    - condition: state
-      entity_id: sensor.away_mode
-      state: 'off'
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: sensor.away_mode
+        state: 'off'
+      - condition: state
+        entity_id: switch.corner_light
+        state: 'off'
   action:
     - service: light.turn_on
       entity_id: light.hall_light
