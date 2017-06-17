@@ -30,11 +30,11 @@
       to: 'off'
   action:
     - service_template: >-
-      {%- if is_state("sun.sun", "below_horizon") -%}
-        switch.turn_on
-      {%- else -%}
-        switch.turn_off
-      {%- endif -%}
+        {%- if is_state("sun.sun", "below_horizon") -%}
+          switch.turn_on
+        {%- else -%}
+          switch.turn_off
+        {%- endif -%}
       entity_id: switch.corner_light
     - service: notify.rdpi
       data:
