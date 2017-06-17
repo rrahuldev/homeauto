@@ -34,13 +34,7 @@ night_mode:
       data_template:
         entity_id: climate.living_room_butterfly
         temperature: >
-          {%- if is_state("sensor.living_room_thermostat_butterfly_operation_mode", "heat") -%}
-          71
-          {%- else -%}
-            {%- if is_state("sensor.living_room_thermostat_butterfly_operation_mode", "cool") -%}
-            77
-            {%- endif -%}
-          {%- endif -%}
+          {{ states.input_slider.night_temp.state | int }}
     - service: notify.rdpi
       data:
         message: Night-mode complete
