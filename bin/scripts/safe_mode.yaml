@@ -5,11 +5,6 @@ safe_mode:
     - alias: Scene safemode for lights
       service: scene.turn_on
       entity_id: scene.safemode
-    - alias: Turn of tv
-      service_template: >-
-        {%- if is_state("sensor.tv_state", "on") -%}
-          script.media_off
-        {%- endif -%}
     - delay:
         # supports seconds, milliseconds, minutes, hours
         minutes: 5
@@ -22,6 +17,8 @@ safe_mode:
       service: input_boolean.turn_on
       data:
         entity_id: input_boolean.away_mode_state
+    - alias: run the door check
+      service: shell_command.door_check
     - alias: turn off window light if more than 1hr away from sunset
       service_template: >-
         {%- if (states.sensor.time.state.replace(':','.') | float) > (states.sensor.sunset_time.state | float - 1) -%}
@@ -32,5 +29,3 @@ safe_mode:
     - service: notify.rdpi
       data:
         message: Safe-mode complete
-    - alias: run the door check
-      service: shell_command.door_check

@@ -71,4 +71,6 @@ tts/*
 Network Trash Folder/
 Temporary Items/
 *.opus
+*.idea
+
 
