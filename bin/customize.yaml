@@ -158,8 +158,8 @@ sensor.nest_away_mode:
 ###################################
 ##  Sensors
 ###################################  
-input_boolean.away_mode_state:
-  hidden: true
+#input_boolean.away_mode_state:
+ # icon: mdi:run-fast
 
 ###################################
 ##  Device Tracker Gadgets
