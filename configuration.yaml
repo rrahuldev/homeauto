@@ -65,8 +65,8 @@ camera:
     file_path: /home/pi/rd/pylab/perFinance.png
 
 shell_command:
-  broadlink_check: 'sudo ./bin/shell_scripts/bipcheck.sh'
-  ha_update: './bin/shell_scripts/ha_update.sh'
+  broadlink_check: 'ssh pi@127.0.0.1 "/home/homeassistant/.homeassistant/bin/shell_scripts/bipcheck.sh"'
+  ha_update: 'ssh pi@127.0.0.1 "/home/homeassistant/.homeassistant/bin/shell_scripts/ha_update.sh"'
   door_check: 'python /home/pi/rd/pylab/DoorCheck.py'
 
 input_boolean:

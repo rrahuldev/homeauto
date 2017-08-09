@@ -6,8 +6,8 @@
 - alias: Detect Motion
   trigger:
     - platform: state
-      entity_id: sensor.living_room_thermostat_butterfly_operation_mode
-      from: 'eco'
+      entity_id: binary_sensor.living_room_thermostat_butterfly_has_leaf
+      from: 'on'
   condition:
     - condition: state
       entity_id: sensor.away_mode
@@ -27,7 +27,6 @@
     - platform: state
       entity_id: sensor.away_mode
       from: 'on'
-      to: 'off'
   action:
     - service_template: >
         {%- if is_state("sun.sun", "below_horizon") -%}
@@ -146,3 +145,7 @@
       entity_id: light.hall_light
       data:
         brightness: 180
+    - service: notify.rdpi
+      data:
+        title: 'Lights'
+        message: Sun-down lights automation
