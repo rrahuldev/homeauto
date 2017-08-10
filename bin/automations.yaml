@@ -7,7 +7,7 @@
   trigger:
     - platform: state
       entity_id: binary_sensor.living_room_thermostat_butterfly_has_leaf
-      from: 'on'
+      to: 'off'
   condition:
     - condition: state
       entity_id: sensor.away_mode
@@ -46,7 +46,7 @@
   trigger: 
     - platform: state
       entity_id: switch.corner_light
-      state: 'on'
+      to: 'on'
       for: '00:01:00'
   condition:
     - condition: state
