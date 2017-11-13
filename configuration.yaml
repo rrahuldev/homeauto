@@ -75,10 +75,10 @@ input_boolean:
     icon: mdi:alert-octagram
     initial: off
 
-input_slider:
+input_number:
   night_temp:
     name: Night Temperature
-    initial: 77
+    initial: 74
     min: 65
     max: 85
     step: 1
